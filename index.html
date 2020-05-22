@@ -13,11 +13,8 @@
 <body>
   <header class="header">
     <img class="logo" src="/images/logo.svg" alt="Logo.">
-
-    <img class="menu-toggle" src="/images/icon-hamburger.svg">
-
     <nav class="main-nav">
-      <ul>
+      <ul class="main-nav__list">
         <li class="main-nav__list-item"><a class="link main-nav__link" href="#">Home</a></li>
         <li class="main-nav__list-item"><a class="link main-nav__link" href="#">About</a></li>
         <li class="main-nav__list-item"><a class="link main-nav__link" href="#">Contact</a></li>
@@ -25,17 +22,23 @@
         <li class="main-nav__list-item"><a class="link main-nav__link" href="#">Careers</a></li>
       </ul>
     </nav>
+    <img class="menu-toggle" src="/images/icon-hamburger.svg">
+    <button class="button header__button">Request Invite</button>
   </header>
 
   <main class="main">
     <div class="backdrop"></div>
     <section class="hero">
-      <img class="hero__hero-background-image" src="/images/bg-intro-mobile.svg" alt="Two color background with irregular shapes.">
-      <img class="hero__hero-foreground-image" src="/images/image-mockups.png" alt="Four phones displaying different app pages.">
-      <h1 class="hero__title">Next generation digital banking</h1>
-      <p class="hero__text">Take your financial life online. Your Easybank account will be a one-stop-shop 
-        for spending, saving, budgeting, investing, and much more.</p>
-      <button class="button">Request Invite</button>
+          <div class="hero__hero-background-image"></div>
+          <img class="hero__hero-foreground-image" src="/images/image-mockups.png" alt="Four phones displaying different app pages.">
+
+        <div class="hero__whatever">
+          <h1 class="hero__title">Next generation digital banking</h1>
+          <p class="hero__text">Take your financial life online. Your Easybank account will be a one-stop-shop 
+            for spending, saving, budgeting, investing, and much more.</p>
+          <button class="button">Request Invite</button>
+        </div>
+
     </section>
   
     <section class="why">
@@ -70,62 +73,66 @@
       </div>
     </section>
     
-    <section class="articles">
-      <h1 class="articles__title">Latest Articles</h1>
+    <section class="latest-articles">
+      <h1 class="latest-articles__title">Latest Articles</h1>
 
-      <article class="article-preview articles__article-preview">
-        <img class="article-preview__image" src="/images/image-currency.jpg" alt="Picture of different money bills.">
-        <div class="article-preview__body">
-          <span class="article-preview__author">By Claire Robinson</span>
-          <h2 class="article-preview__title">Receive money in any currency with no fees</h2>
-          <p class="article-preview__text">The world is getting smaller and we’re becoming more mobile. So why should you be 
-          forced to only receive money in a single …</p>
-        </div>
-      </article>
+      <div class="articles">
+        <article class="article-preview articles__article-preview">
+          <img class="article-preview__image" src="/images/image-currency.jpg" alt="Picture of different money bills.">
+          <div class="article-preview__body">
+            <span class="article-preview__author">By Claire Robinson</span>
+            <h2 class="article-preview__title">Receive money in any currency with no fees</h2>
+            <p class="article-preview__text">The world is getting smaller and we’re becoming more mobile. So why should you be 
+            forced to only receive money in a single …</p>
+          </div>
+        </article>
 
-      <article class="article-preview articles__article-preview">
-        <img class="article-preview__image" src="/images/image-restaurant.jpg" alt="Picture of a plate in a high-end res">
-        <div class="article-preview__body">
-          <span class="article-preview__author">By Wilson Hutton</span>
-          <h2 class="article-preview__title">Treat yourself without worrying about money</h2>
-          <p class="article-preview__text">Our simple budgeting feature allows you to separate out your spending and set 
-            realistic limits each month. That means you …</p>
-        </div>
-      </article>
+        <article class="article-preview articles__article-preview">
+          <img class="article-preview__image" src="/images/image-restaurant.jpg" alt="Picture of a plate in a high-end res">
+          <div class="article-preview__body">
+            <span class="article-preview__author">By Wilson Hutton</span>
+            <h2 class="article-preview__title">Treat yourself without worrying about money</h2>
+            <p class="article-preview__text">Our simple budgeting feature allows you to separate out your spending and set 
+              realistic limits each month. That means you …</p>
+          </div>
+        </article>
 
-      <article class="article-preview articles__article-preview">
-        <img class="article-preview__image" src="/images/image-plane.jpg" alt="Picture of a plane wing.">
-        <div class="article-preview__body">
-          <span class="article-preview__author">By Wilson Hutton</span>
-          <h2 class="article-preview__title">Take your Easybank card wherever you go</h2>
-          <p class="article-preview__text">We want you to enjoy your travels. This is why we don't charge any fees on 
-            purchases while you're abroad. We'll even show you …</p>
-        </div>
-      </article>
+        <article class="article-preview articles__article-preview">
+          <img class="article-preview__image" src="/images/image-plane.jpg" alt="Picture of a plane wing.">
+          <div class="article-preview__body">
+            <span class="article-preview__author">By Wilson Hutton</span>
+            <h2 class="article-preview__title">Take your Easybank card wherever you go</h2>
+            <p class="article-preview__text">We want you to enjoy your travels. This is why we don't charge any fees on 
+              purchases while you're abroad. We'll even show you …</p>
+          </div>
+        </article>
 
-      <article class="article-preview articles__article-preview">
-        <img class="article-preview__image" src="/images/image-confetti.jpg" alt="Picture of colorful confetti.">
-        <div class="article-preview__body">
-          <span class="article-preview__author">By Claire Robinson</span>
-          <h2 class="article-preview__title">Our invite-only Beta accounts are now live!</h2>
-          <p class="article-preview__text">After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
-            It’s easy to request an invite through the site …</p>
-        </div>
-      </article>
+        <article class="article-preview articles__article-preview">
+          <img class="article-preview__image" src="/images/image-confetti.jpg" alt="Picture of colorful confetti.">
+          <div class="article-preview__body">
+            <span class="article-preview__author">By Claire Robinson</span>
+            <h2 class="article-preview__title">Our invite-only Beta accounts are now live!</h2>
+            <p class="article-preview__text">After a lot of hard work by the whole team, we’re excited to launch our closed beta. 
+              It’s easy to request an invite through the site …</p>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <img class="inverted-logo footer__logo" src="/images/logo.svg" alt="Easybank logo.">
-    <div class="socials footer__socials">
-      <a href="#"><img class="socials-icon" src="/images/icon-facebook.svg" alt="Facebook icon."></a>
-      <a href="#"><img class="socials-icon" src="/images/icon-youtube.svg" alt="YouTube icon."></a>
-      <a href="#"><img class="socials-icon" src="/images/icon-twitter.svg" alt="Twitter icon."></a>
-      <a href="#"><img class="socials-icon" src="/images/icon-pinterest.svg" alt="Pinterest icon."></a>
-      <a href="#"><img class="socials-icon" src="/images/icon-instagram.svg" alt="Intagram icon."></a>
+    <div class="footer__first-section">
+      <img class="inverted-logo footer__logo" src="/images/logo.svg" alt="Easybank logo.">
+      <div class="socials footer__socials">
+        <a href="#"><img class="socials-icon" src="/images/icon-facebook.svg" alt="Facebook icon."></a>
+        <a href="#"><img class="socials-icon" src="/images/icon-youtube.svg" alt="YouTube icon."></a>
+        <a href="#"><img class="socials-icon" src="/images/icon-twitter.svg" alt="Twitter icon."></a>
+        <a href="#"><img class="socials-icon" src="/images/icon-pinterest.svg" alt="Pinterest icon."></a>
+        <a href="#"><img class="socials-icon" src="/images/icon-instagram.svg" alt="Intagram icon."></a>
+      </div>
     </div>
 
-    <nav>
+    <nav class="footer__second-section">
       <ul class="footer__nav-list">
         <li class="footer__nav-list-item"><a class="link footer__link" href="#">About Us</a></li>
         <li class="footer__nav-list-item"><a class="link footer__link" href="#">Contact</a></li>
@@ -136,9 +143,10 @@
       </ul>
     </nav>
 
-    <button class="button footer__button">Request Invite</button>
-    
-    <div class="copyright">© Easybank. All Rights Reserved</div>
+    <div class="footer__third-section">
+      <button class="button footer__button">Request Invite</button>
+      <div class="copyright">© Easybank. All Rights Reserved</div>
+    </div>
   </footer>
 
   <div class="attribution">

@@ -8,6 +8,10 @@ html, body {
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -15,7 +19,7 @@ ul {
 }
 
 button {
-  font-size: inherit;
+  font-family: inherit;
 }
 
 /* variables */
@@ -66,12 +70,17 @@ img {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 60px;
   padding: 0 var(--horizontal-padding);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   background-color: white;
+}
+
+.header__button {
+  display: none;
 }
 
 .link {
@@ -91,7 +100,7 @@ img {
 }
 
 .main-nav__link {
-  margin-top: 1rem;
+
   font-size: 1.125rem;
 }
 
@@ -115,15 +124,18 @@ img {
 
 .hero__hero-background-image {
   position: absolute;
+  background-image: url('/images/bg-intro-mobile.svg');
+  background-repeat: no-repeat;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
 .hero__hero-foreground-image {
   margin-top: -40px; /* todo: use something else */
-  width: 100%;
-  z-index: -1;
+  height: 100%;
+  z-index: 1;
 }
 
 .hero__title {
@@ -147,17 +159,17 @@ img {
 .why {
   background-color: var(--color-neutral-2);
   padding: 4rem var(--horizontal-padding);
+  text-align: center;
 }
 
 .why__title {
   font-size: 2rem;
-  text-align: center;
   margin-top: 0;
   font-weight: 300;
 }
 
 .why__text {
-  text-align: center;
+  margin-top: 0;
 }
 
 .why__features {
@@ -178,7 +190,7 @@ img {
   margin-top: 2.5rem;
 }
 
-.articles {
+.latest-articles {
   background-color: var(--color-neutral-3);
   padding: 4rem var(--horizontal-padding);
 }
@@ -187,14 +199,15 @@ img {
   background-color: white;
 }
 
-.articles__title {
+.latest-articles__title {
   text-align: center;
   font-size: 2rem;
   font-weight: 300;
 }
 
 .article-preview__image {
-  border-radius: var(--border-radius-sm);
+  width: 100%;
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
 }
 
 .article-preview__author {
@@ -214,7 +227,7 @@ img {
 }
 
 .article-preview__body {
-  padding: 1rem 2rem 2.5rem 2rem;
+  padding: 1rem 2rem 1.5rem 2rem;
 }
 
 .articles__article-preview {
@@ -223,7 +236,7 @@ img {
 
 .footer {
   background-color: var(--color-primary-1);
-  padding: 2.5rem 0;
+  padding: 2.5rem var(--horizontal-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,11 +247,11 @@ img {
 }
 
 .footer__socials {
-  margin: 2rem 0;
+  margin: 1.6rem 0;
 }
 
 .socials-icon {
-  padding: 0 8px;
+  padding: 0 6px;
 }
 
 .footer__link {
@@ -253,11 +266,137 @@ img {
   margin-top: 0.6rem;
 }
 
-.footer__button {
-  margin-top: 2rem;
-  margin-bottom: 1.6rem;
+.footer__first-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.footer__third-section {
+  margin-top: 1.6rem;
+  text-align: center;
+}
+
+.copyright {
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 1440px) {
+  html {
+    --horizontal-padding: 10%;
+  }
+
+  .main-nav {
+    visibility: visible;
+    width: initial;
+    position: initial;
+    padding: 0;
+  }
+
+  .main-nav__link {
+    font-size: 0.9rem;
+    color: var(--color-neutral-1);
+  }
+
+  .main-nav__list {
+    display: flex;
+  }
+
+  .main-nav__list-item + .main-nav__list-item {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .hero__hero-background-image {
+    background-image: url('/images/bg-intro-desktop.svg');
+    background-position: 630px -200px;
+    left: initial;
+    right: 0;
+  }
+
+  .hero__hero-foreground-image {
+    position: absolute;
+    width: 50%;
+    right: -120px;
+  }
+
+  .hero__whatever {
+    float: left;
+    width: 30%;
+    margin-top: 30vh;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .header__button {
+    display: block;
+    align-items: center;
+  }
+
+  .why {
+    text-align: left;
+  }
+
+  .why__text {
+    width: 45%;
+  }
+
+  .features {
+    display: flex;
+  }
+
+  .features__feature + .features__feature {
+    margin: 0 2rem;
+  }
+
+  .feature {
+    text-align: left;
+  }
+
+  .articles {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .latest-articles__title {
+    text-align: left;
+  }
+
+  .article-preview {
+    width: 23%;
+  }
+
+  .article-preview__image {
+    height: 200px;
+    object-fit: fill;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer__third-section {
+    text-align: right;
+  }
+
+  .socials-icon {
+    padding-left: 0;
+    padding-right: 6px;
+  }
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
