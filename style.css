@@ -116,11 +116,13 @@ img {
 .hero__hero-background-image {
   position: absolute;
   left: 0;
+  width: 100%;
   z-index: -1;
 }
 
 .hero__hero-foreground-image {
   margin-top: -40px; /* todo: use something else */
+  width: 100%;
   z-index: -1;
 }
 
