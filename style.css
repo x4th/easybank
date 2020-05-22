@@ -11,6 +11,7 @@ html, body {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 button {
@@ -29,20 +30,28 @@ html {
   --color-neutral-1: hsl(233, 8%, 62%);
   --color-neutral-2: hsl(220, 16%, 96%);
   --color-neutral-3: hsl(0, 0%, 98%);
+
+  --horizontal-padding: 5%;
+
+  --border-radius-sm: 5px;
+  --border-radius-lg: 30px;
 }
 
 /* typography */
 
 body {
   font-family: 'Public Sans', sans-serif;
-  font-size: 1.125rem;
   color: var(--color-neutral-1);
 }
 
+p {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
 h1 {
-  font-weight: 400;
-  font-size: 2.5rem;
   color: var(--color-primary-1);
+  line-height: initial;
 }
 
 h2 {
@@ -51,68 +60,202 @@ h2 {
 
 img {
   max-width: 100%;
+  object-fit: contain;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   height: 60px;
-  padding: 0 5%;
+  padding: 0 var(--horizontal-padding);
   position: fixed;
   z-index: 1;
   width: 100%;
   background-color: white;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--color-primary-1);
+}
+
 .main-nav {
-  display: none;
+  visibility: hidden;
+  position: fixed;
+  background-color: white;
+  padding: 1.5rem 0;
+  width: 90%; /* todo: change */
+  top: 90px;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
 }
 
-.hamburger-menu {
-  object-fit: contain;
+.main-nav__link {
+  margin-top: 1rem;
+  font-size: 1.125rem;
 }
 
-.logo {
-  object-fit: contain;
+.main-nav__list-item + .main-nav__list-item {
+  margin-top: 1rem;
 }
 
-.main {
-  width: 90%;
-  margin: 0 auto;
-  
+.backdrop {
+  position: fixed;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(var(--color-primary-1), rgba(255, 255, 255, 0));
 }
-
-/* HERO */
 
 .hero {
-  overflow: auto;
   text-align: center;
+  padding: 0 var(--horizontal-padding);
+  padding-bottom: 4rem;
 }
 
 .hero__hero-background-image {
   position: absolute;
   left: 0;
-  width: 100%;
+  z-index: -1;
 }
 
 .hero__hero-foreground-image {
-  position: absolute;
-  left: 0;
-  top: -8%; /* todo: lookup */
+  margin-top: -40px; /* todo: use something else */
+  z-index: -1;
 }
 
 .hero__title {
-  margin-top: 120%; /* todo: lookup */ 
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.hero__text {
+  margin: 1.5rem 0;
 }
 
 .button {
   border: 0;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   background: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
-  border-radius: 30px;
-
+  border-radius: var(--border-radius-lg);
 }
+
+.why {
+  background-color: var(--color-neutral-2);
+  padding: 4rem var(--horizontal-padding);
+}
+
+.why__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0;
+  font-weight: 300;
+}
+
+.why__text {
+  text-align: center;
+}
+
+.why__features {
+  margin-top: 4rem;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature__title {
+  color: var(--color-primary-1);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.features__feature + .features__feature {
+  margin-top: 2.5rem;
+}
+
+.articles {
+  background-color: var(--color-neutral-3);
+  padding: 4rem var(--horizontal-padding);
+}
+
+.article-preview {
+  background-color: white;
+}
+
+.articles__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.article-preview__image {
+  border-radius: var(--border-radius-sm);
+}
+
+.article-preview__author {
+  font-size: 0.7rem;
+}
+
+.article-preview__title {
+  color: var(--color-primary-1);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: initial;
+}
+
+.article-preview__text {
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.article-preview__body {
+  padding: 1rem 2rem 2.5rem 2rem;
+}
+
+.articles__article-preview {
+  margin: 1.5rem 0;
+}
+
+.footer {
+  background-color: var(--color-primary-1);
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inverted-logo {
+  filter: contrast(0) brightness(2);
+}
+
+.footer__socials {
+  margin: 2rem 0;
+}
+
+.socials-icon {
+  padding: 0 8px;
+}
+
+.footer__link {
+  color: white;
+}
+
+.footer__nav-list {
+  text-align: center;
+}
+
+.footer__nav-list-item + .footer__nav-list-item {
+  margin-top: 0.6rem;
+}
+
+.footer__button {
+  margin-top: 2rem;
+  margin-bottom: 1.6rem;
+}
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
