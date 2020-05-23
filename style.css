@@ -309,7 +309,7 @@ img {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
   :root {
     --horizontal-padding: 10%;
   }
@@ -396,7 +396,7 @@ img {
   
   .hero__info {
     float: left;
-    width: 30%;
+    width: 50%;
     margin-top: 30vh;
   }
   
@@ -461,5 +461,17 @@ img {
   .footer__third-segment {
     text-align: right;
     margin-top: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero__info {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero__info {
+    width: 35%;
   }
 }
